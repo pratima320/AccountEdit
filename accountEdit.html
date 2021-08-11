@@ -1,0 +1,48 @@
+<template>
+<!--
+<lightning-card
+        title="WireGetFieldValue"
+        icon-name="standard:account">
+        <template if:true={account.data}>
+            <div class="slds-m-around_medium">
+                <p><lightning-formatted-number 
+                    format-style="currency"
+                    value={revenue}
+                    currency-code="USD">
+                    </lightning-formatted-number>
+                </p>
+                <p>
+                    <lightning-input
+                    label="Name"
+                    value={name}>
+                    </lightning-input>
+                </p>
+                
+            </div>
+        </template>
+    </lightning-card>-->
+    
+    <lightning-record-edit-form 
+            object-api-name={objectApiName} 
+            record-id={recordId}
+            onsubmit={handleSubmit}>
+       <lightning-input label="Type"
+                name="type"
+                value={type}
+                onchange={handleChange}
+                class="slds-m-bottom_x-small"></lightning-input>
+        <lightning-input label="Name" 
+                value={name}
+                name="name" 
+                onchange={handleChange}
+                class="slds-m-bottom_x-small nameInput"></lightning-input>
+        
+
+        <lightning-button class="slds-m-top_small"
+                 type="submit"
+                 label="Update Account Name">
+        </lightning-button>
+    </lightning-record-edit-form>
+    {nameCount}
+    
+</template>
